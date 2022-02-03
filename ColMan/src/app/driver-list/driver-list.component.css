@@ -1,0 +1,28 @@
+table {
+    border-spacing: 1;
+  border-collapse: collapse;
+  background: rgb(236, 243, 243);
+  border-radius: 6px;
+  overflow: hidden;
+  max-width: 800px;
+  width: 100%;
+  margin: 0 auto;
+  position: relative;
+  }
+  
+  td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 5px;
+  }
+  
+  tr:nth-child(even) {
+    background-color: #dddddd;
+  }
+   th{
+    background-color:#04AA6D ;
+    color:white;
+  }
+  
+  
+  

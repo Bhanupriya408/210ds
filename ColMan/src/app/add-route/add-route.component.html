@@ -1,0 +1,90 @@
+<p>add-route works!</p>
+<body style="background-color:#DBF9FC ;">
+    <div class="container">
+        <div class="col align-self-center">
+            <form (ngSubmit)="onSubmit()" #myForm="ngForm">
+                <div class="form-group">
+                    <label for="location" class="col-sm-2 col-form-label">Location</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      [(ngModel)]="routeDetails.location"
+                      name="txtlocation"
+                      #location="ngModel"
+                     
+                      required
+                    />
+                </div>
+                <div class="form-group">
+                    <label for="starttime" class="col-sm-2 col-form-label">StartTime</label>
+                    <input
+                      type="starttime"
+                      class="form-control"
+                      [(ngModel)]="routeDetails.starttime"
+                      name="txtstarttime"
+                      #txtstarttime="ngModel"
+                      
+                      required
+                    />
+                </div>
+            
+                <div class="form-group">
+                    <label for="txtreachtime" class="col-sm-2 col-form-label">ReachTime</label>
+                    <input
+                        type="reachtime"
+                        class="form-control"
+                        [(ngModel)]="routeDetails.reachtime"
+                        name="txtreachtime"
+                        #txtreachttime="ngModel"
+                        
+                        required
+                    />
+                </div>
+                <div class="form-group">
+                    <label for="txtrid" class="col-sm-2 col-form-label">Routeid</label>
+                    <input
+                      type="rid"
+                      class="form-control"
+                      [(ngModel)]="routeDetails.rid"
+                      name="txtrid"
+                      #txtrid="ngModel"
+                       
+                      required
+                    />
+                </div>
+    
+          
+                <div class="form-group">
+                    <label for="txtbusno" class="col-sm-2 col-form-label">Busno</label>
+                    <input
+                      type="busno"
+                      class="form-control"
+                      [(ngModel)]="routeDetails.busno"
+                      name="txtbusno"
+                      #txtbusno="ngModel"
+                       required
+                    />      
+                </div>
+                <span
+                  *ngIf="txtbusno.invalid && txtbusno.touched"
+                   class="error form-control-feedback"
+                >busno is required</span>
+                <div class="form-group">
+                    <button
+                      (click)="addRoute()"
+                      [disabled]="!myForm.form.valid"
+                      type="button"
+                      class="btn btn-primary"
+                    >
+                      Add route
+                    </button>
+                </div>
+                <div class="alert alert-danger" role="alert" *ngIf="submitted">
+                    Please fill all the fields
+                </div>
+            </form>
+        </div>
+    </div>
+    <pre>
+       {{ routeDetails | json }}
+    </pre>

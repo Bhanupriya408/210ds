@@ -1,0 +1,35 @@
+<p>Student list</p>
+<body style="background-color:#DBF9FC ;">
+  <table >
+    <tr>
+      <th scope="col">Sid</th>
+      <th scope="col">Sname</th>
+      <th scope="col">Address</th>
+      <th scope="col">Phno</th>
+      <th scope="col">Gender</th>
+      <th scope="col">Busno</th>
+      <th scope="col">Status</th>
+      <th  scope="col">Update</th>
+      <th  scope="col">Delete</th>
+    </tr>
+    <tr *ngFor="let std of students">
+     
+      <td>{{ std.sid }}</td>
+      <td>{{ std.sname }}</td>
+      <td>{{ std.address }}</td>
+      <td>{{ std.phno }}</td>
+      <td>{{ std.gender }}</td>
+      <td>{{ std.busno }}</td>
+      <td>{{ std.status }}</td>
+      <td>
+      <a routerLink="/updatestd/{{ std.sid }}" routerLinkActive="active">
+        <button>Update</button>
+      </a>
+      </td>
+      <td>
+      <button (click)="onDelete(std)">Delete</button>
+      </td>
+    </tr>
+  </table>
+</body>
+

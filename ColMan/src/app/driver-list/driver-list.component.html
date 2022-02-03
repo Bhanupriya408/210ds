@@ -1,0 +1,31 @@
+<p>driver-list works!</p>
+<body style="background-color:#DBF9FC ;">
+  <table >
+    <tr>
+      <th scope="col">Did</th>
+      <th scope="col">Dname</th>
+      <th scope="col">Address</th>
+      <th scope="col">Phno</th>
+      <th scope="col">Busno</th>
+      <th  scope="col">Update</th>
+      <th  scope="col">Delete</th>
+    </tr>
+    <tr *ngFor="let dvr of drivers">
+     
+      <td>{{ dvr.did }}</td>
+      <td>{{ dvr.dname }}</td>
+      <td>{{ dvr.address }}</td>
+      <td>{{ dvr.phno }}</td>
+      <td>{{ dvr.busno }}</td>
+      <td>
+      <a routerLink="/updateDvr/{{ dvr.did }}" routerLinkActive="active">
+        <button>Update</button>
+      </a>
+      </td>
+      <td>
+      <button (click)="onDelete(dvr)">Delete</button>
+      </td>
+    </tr>
+  </table>
+</body>
+

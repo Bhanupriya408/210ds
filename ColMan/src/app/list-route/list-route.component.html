@@ -1,0 +1,30 @@
+<p>list-route works!</p>
+<body style="background-color:#DBF9FC ;">
+    <table >
+      <tr>
+        <th scope="col">Rid</th>
+        <th scope="col">Location</th>
+        <th scope="col">Start_Time</th>
+        <th scope="col">Reach_Time</th>
+        <th scope="col">Busno</th>
+        <th  scope="col">Update</th>
+        <th  scope="col">Delete</th>
+      </tr>
+      <tr *ngFor="let rte of routes">
+       
+        <td>{{ rte.rid }}</td>
+        <td>{{ rte.location }}</td>
+        <td>{{ rte.starttime}}</td>
+        <td>{{ rte.reachtime}}</td>
+        <td>{{ rte.busno }}</td>
+        <td>
+        <a routerLink="/updateRte/{{ rte.rid }}" routerLinkActive="active">
+          <button>Update</button>
+        </a>
+        </td>
+        <td>
+        <button (click)="onDelete(rte)">Delete</button>
+        </td>
+      </tr>
+    </table>
+  </body>
